@@ -1,4 +1,3 @@
-#back up: nak
 import socket
 from random import randint
 import struct
@@ -202,7 +201,11 @@ class dhcp_server:
 			return "DHCPDecline"
 		
 		elif  self.DHCP_Message_Type == 7:		#dhcp release
-			if self.macaddr == self.ip_pool[server.CIADDR[3]][1]:
+			if self.ip_pool[server.CIADDR[3]] == []:
+				print('\n#Get DHCPRelease packet!')
+				self.to_init()
+				return "DHCPRelease"
+			elif self.macaddr == self.ip_pool[server.CIADDR[3]][1]:
 				print('\n#Get DHCPRelease packet!')
 				self.ip_pool[server.CIADDR[3]] = []
 				self.to_init()

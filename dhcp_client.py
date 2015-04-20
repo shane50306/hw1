@@ -322,8 +322,7 @@ def release(release_ip):
 if __name__ == '__main__':
 	
 	
-	for i in range(100, 201):				#test normal request
-		normal_test()
+	#normal_test()					#test normal request
 	
 	
 	#request_special_ip(150)		#test request duplicate ip
@@ -334,6 +333,6 @@ if __name__ == '__main__':
 	#request_decline()
 	
 	#release(150)					#release test
-	#request_special_ip(250)
+	#request_special_ip(150)
 	
 	
